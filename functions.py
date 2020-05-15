@@ -4,7 +4,7 @@ import boto3
 
 
 def five_days_from_now():
-    return datetime.datetime.now()
+    return datetime.datetime.now() + datetime.timedelta(days=5)
 
 
 def create_file(path, content):

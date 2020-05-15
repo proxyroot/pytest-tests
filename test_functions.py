@@ -9,10 +9,10 @@ from functions import create_file, five_days_from_now
 def test_five_days_from_now():
     # Freezing time
     with freezegun.freeze_time("2012-01-14"):
-        assert five_days_from_now() == datetime.datetime.now()
+        assert five_days_from_now() == datetime.datetime.now() + datetime.timedelta(days=5)
 
     # call five_days_from_now without freeze
-    assert five_days_from_now() != datetime.datetime.now()
+    assert five_days_from_now() != datetime.datetime.now() + datetime.timedelta(days=5)
 
 
 def test_create_file(s3_client):
