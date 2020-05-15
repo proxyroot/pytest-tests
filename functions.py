@@ -10,8 +10,8 @@ def five_days_from_now():
 def create_file(path, content):
     """
     Creates a file in s3 bucket given a path to the file and content to write
-    :path: <str>
-    :content: <str>
+    :param path: <str>
+    :param content: <str>
     """
     client = boto3.client("s3", region_name="us-east-1")
     client.put_object(
